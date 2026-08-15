@@ -1,0 +1,256 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    user-select: none;
+}
+
+body {
+    background-color: #0a0a0a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 12px;
+}
+
+.calculator {
+    background-color: #1c1c1e;
+    border-radius: 28px;
+    padding: 24px 20px 28px;
+    max-width: 500px;
+    width: 100%;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.brand h1 {
+    font-size: 1.2rem;
+    color: #ffffff;
+    letter-spacing: 1px;
+}
+
+.power-control {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.power-btn {
+    background: none;
+    border: 1px solid #555;
+    color: #aaa;
+    font-size: 1.5rem;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.power-btn:hover {
+    background-color: #333;
+    border-color: #888;
+}
+
+.power-btn.on {
+    color: #4caf50;
+    border-color: #4caf50;
+    box-shadow: 0 0 8px #4caf5066;
+}
+
+.power-btn.off {
+    color: #888;
+    border-color: #444;
+}
+
+.power-btn:active {
+    transform: scale(0.92);
+}
+
+select {
+    background-color: #2c2c2e;
+    border: 1px solid #3a3a3c;
+    border-radius: 6px;
+    color: #f0f0f0;
+    padding: 4px 8px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    outline: none;
+}
+
+select:focus {
+    border-color: #bb86fc;
+}
+
+/* Màn hình */
+.screen {
+    background-color: #0f0f11;
+    border-radius: 16px;
+    padding: 16px 20px;
+    margin-bottom: 20px;
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    word-break: break-all;
+    border: 1px solid #2a2a2c;
+    transition: opacity 0.3s;
+}
+
+.screen.powered-off {
+    opacity: 0.2;
+    pointer-events: none;
+}
+
+.expression {
+    font-size: 1.1rem;
+    color: #888888;
+    min-height: 28px;
+    width: 100%;
+    text-align: right;
+    font-family: 'Courier New', monospace;
+}
+
+.result {
+    font-size: 2.8rem;
+    font-weight: 300;
+    color: #ffffff;
+    width: 100%;
+    text-align: right;
+    font-family: 'Courier New', monospace;
+    line-height: 1.2;
+    transition: font-size 0.2s;
+}
+
+.result.shrink {
+    font-size: 2rem;
+}
+
+.troll-note {
+    font-size: 0.8rem;
+    color: #ffb74d;
+    margin-top: 4px;
+    width: 100%;
+    text-align: right;
+    font-style: italic;
+    min-height: 20px;
+}
+
+/* Bàn phím số - 4 cột */
+.keypad {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.keypad button {
+    background-color: #2c2c2e;
+    border: none;
+    border-radius: 12px;
+    color: #ffffff;
+    font-size: 1.5rem;
+    font-weight: 400;
+    padding: 16px 0;
+    cursor: pointer;
+    transition: background-color 0.15s, transform 0.1s;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.4);
+}
+
+.keypad button:active {
+    transform: scale(0.92);
+    background-color: #3a3a3c;
+}
+
+/* Hàng chức năng - 4 cột */
+.function-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.func-btn {
+    background-color: #2c2c2e;
+    border: none;
+    border-radius: 12px;
+    color: #ffffff;
+    font-size: 1.3rem;
+    padding: 14px 0;
+    cursor: pointer;
+    transition: background-color 0.15s, transform 0.1s;
+    font-weight: 500;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.4);
+}
+
+.func-btn:active {
+    transform: scale(0.92);
+    background-color: #3a3a3c;
+}
+
+.func-btn.operator {
+    background-color: #ff9f0a;
+    color: #1c1c1e;
+}
+
+.func-btn.operator:active {
+    background-color: #e08e00;
+}
+
+.func-btn.equals {
+    background-color: #bb86fc;
+    color: #1c1c1e;
+    font-weight: bold;
+}
+
+.func-btn.equals:active {
+    background-color: #9f6fe6;
+}
+
+/* Khi tắt máy, vô hiệu hóa tất cả nút (trừ nút nguồn) */
+.powered-off .keypad button,
+.powered-off .function-row button:not(.power-btn) {
+    opacity: 0.4;
+    pointer-events: none;
+}
+
+/* Responsive nhỏ */
+@media (max-width: 500px) {
+    .calculator {
+        padding: 16px 12px 20px;
+        border-radius: 20px;
+        max-width: 100%;
+    }
+    .keypad button {
+        font-size: 1.2rem;
+        padding: 14px 0;
+    }
+    .func-btn {
+        font-size: 1.1rem;
+        padding: 12px 0;
+    }
+    .power-btn {
+        width: 32px;
+        height: 32px;
+        font-size: 1.2rem;
+    }
+    select {
+        font-size: 0.7rem;
+        padding: 2px 6px;
+    }
+}
