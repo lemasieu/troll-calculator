@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Máy Tính Troll</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="calculator">
+        <div class="header">
+            <div class="brand">
+                <h1>🧮 TrollCalculator</h1>
+            </div>
+            <div class="power-control">
+                <button id="powerBtn" class="power-btn" title="Bật/Tắt">⏻</button>
+                <select id="inputType">
+                    <option value="decimal">Thập phân</option>
+                    <option value="binary">Nhị phân</option>
+                    <option value="octal">Bát phân</option>
+                    <option value="hexadecimal">Thập lục phân</option>
+                    <option value="roman">La Mã</option>
+                    <option value="persian">Ba Tư</option>
+                    <option value="chinese">Trung Quốc</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="screen">
+            <div class="expression" id="expression"></div>
+            <div class="result" id="resultDisplay"></div>
+            <div class="troll-note" id="trollNote"></div>
+        </div>
+
+        <!-- Bàn phím số 4 cột -->
+        <div class="keypad" id="keypad"></div>
+
+        <!-- Hàng chức năng 4 cột -->
+        <div class="function-row">
+            <button class="func-btn" data-action="clear">C</button>
+            <button class="func-btn" data-action="backspace">⌫</button>
+            <button class="func-btn" data-action="negate">±</button>
+            <button class="func-btn operator" data-action="divide">÷</button>
+        </div>
+        <div class="function-row">
+            <button class="func-btn operator" data-action="multiply">×</button>
+            <button class="func-btn operator" data-action="subtract">−</button>
+            <button class="func-btn operator" data-action="add">+</button>
+            <button class="func-btn equals" data-action="calculate">=</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
