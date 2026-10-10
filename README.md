@@ -6,7 +6,7 @@ A dark-themed, mobile-friendly calculator that accepts numbers in multiple numer
 
 ## 🧮 Live Demo
 
-👉 **[https://xn--msiu-goa8b.vn/j4f/troll-calculator/](https://xn--msiu-goa8b.vn/j4f/troll-calculator/)**
+👉 [https://sieu.io.vn/j4f/troll-calculator](https://sieu.io.vn/j4f/troll-calculator)
 
 ---
 
@@ -70,21 +70,36 @@ No frameworks, no dependencies – just pure vanilla goodness.
 troll-calculator/
 ├── index.html      # Main HTML file
 ├── style.css       # Dark theme & responsive styles
-└── script.js       # All calculator logic & troll engine
+├── script.js       # All calculator logic & troll engine
+└── README.md       # Project documentation
 ```
 
 ---
 
-## 🚀 Installation
+## 🔧 Installation & Usage
 
-1. **Clone** the repository:
+1. **Clone the repository**
    ```bash
    git clone https://github.com/lemasieu/troll-calculator.git
    ```
-2. **Open** `index.html` in your browser.
-3. **Start** calculating (and getting trolled)!
+2. **Navigate to the project folder**   
+   ```bash
+   cd troll-calculator
+   ```
+3. **Open the application**
+   - Simply open `index.html` in your web browser
+   - Or use a local development server (e.g., Live Server in VS Code)
+  
+---
 
-Or simply visit the [live demo](https://xn--msiu-goa8b.vn/j4f/troll-calculator/).
+## 📝 How It Works
+
+1. Select your input numeral system from the dropdown
+2. Enter numbers using the dynamic keypad
+3. Choose an operation (+, −, ×, ÷)
+4. Press `=` to calculate
+5. Watch the result appear in a different numeral system (troll!)
+6. Continue calculating — the calculator automatically switches to the new system
 
 ---
 
@@ -104,16 +119,10 @@ Contributions are welcome! Feel free to:
 
 ---
 
-## 📄 License
-
-Distributed under the MIT License. See `LICENSE` for more information.
-
----
-
 ## 🙏 Acknowledgments
 
 - Inspired by the desire to make calculators fun again.
-- Built with Deepseek and a sense of humor.
+- Built for anyone who enjoys a good prank.
 
 ---
 
