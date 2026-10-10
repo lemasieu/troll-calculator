@@ -6,7 +6,7 @@ A dark-themed, mobile-friendly calculator that accepts numbers in multiple numer
 
 ## 🧮 Live Demo
 
-👉 [https://sieu.io.vn/j4f/troll-calculator](https://sieu.io.vn/j4f/troll-calculator)
+👉 [https://www.sieu.io.vn/j4f/troll-calculator](https://www.sieu.io.vn/j4f/troll-calculator)
 
 ---
 
